@@ -4,16 +4,47 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects.
 
 ## 1. Plan Mode
 
-**Always begin tasks in plan mode, even the ones that look simple.**
+**Always begin non-trivial tasks in plan mode to understand the problem deeply.** Plan mode is about interrogating the problem before jumping to solutions. Both the user and Claude must understand:
+- What problem are we actually solving?
+- What are the requirements?
+- What are the edge cases and boundary constraints?
 
-## 2. Verification Steps
+### In Plan Mode, Always:
+1. **Ask clarifying questions** - don't assume you understand
+2. **Explore context** - what code/systems are involved?
+3. **Identify constraints** - what can't we change?
+4. **Define success criteria** - how do we verify it worked?
+5. **Consider alternatives** - what other approaches exist?
 
-**Every task must have verification steps before starting.** How does Claude know when it is successful? A plan without verification steps and test scenarios is incomplete.
+### Red Flags (You Don't Understand the Problem):
+- You can't explain WHY we're doing this
+- Success criteria are vague ("make it better")
+- You don't know what can/can't be changed
+- Multiple interpretations of the request exist
 
-## 3. Concise
+**When in doubt, ask questions in plan mode before proposing solutions.**
 
-**Keep this file concise.** If this file grows beyond 200 lines, we can create rules in `~/.claude/rules/`.
+## 2. Verification
 
-## 4. Rules Directory
+**Define how to verify success before starting work.** Success criteria must be concrete and testable.
+- What commands verify it works?
+- What should the output be?
+- What edge cases to test?
+- How to confirm no regressions?
 
-Behavioral rules live in `~/.claude/rules/active/`. Review proposed rules in `~/.claude/rules/proposed/` periodically.
+**Before claiming "done": run verification steps and show actual output.**
+
+## 3. Workflow
+
+**Use task lists and feature branches for all work.**
+
+- Create a task list for non-trivial work (use TaskCreate)
+- Always work on a feature branch, never on primary branches (main, master, dev, qa, prod, release, etc.)
+- Branch naming: descriptive of the problem (e.g., `fix-auth-bug`, `add-user-profile`)
+- Let the user decide: merge locally or create PR
+
+**Don't assume the merge strategy.** Ask if unclear.
+
+## 4. Concise
+
+**Keep this file concise.** If this file grows, beyond 200 lines, notify the user.
