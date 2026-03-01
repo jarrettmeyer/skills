@@ -19,11 +19,11 @@ ln -s /path/to/checkout/skills/CLAUDE.md ~/.claude/CLAUDE.md
 
 # Symlink a skill to Claude skills
 mkdir -p ~/.claude/skills/
-ln -s /path/to/checkout/skills/skills/use-podman/ ~/.claude/skills/
+ln -s /path/to/checkout/skills/skills/podman/ ~/.claude/skills/
 ```
 
 ### Available Skills
 - `caffeinate`: Keep the computer from going to sleep
-- `use-podman`: Instructions for using Podman instead of Docker
-- `use-scrapling`: Scrape websites using the [scrapling](https://github.com/D4Vinci/Scrapling) library, with intelligent fetcher selection for static, JS-rendered, and anti-bot protected sites
+- `podman`: Instructions for using Podman instead of Docker
+- `scrapling`: Scrape websites using the [scrapling](https://github.com/D4Vinci/Scrapling) library, with intelligent fetcher selection for static, JS-rendered, and anti-bot protected sites
 - `uuid`: Generate UUIDs

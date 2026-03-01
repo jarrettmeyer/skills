@@ -1,9 +1,9 @@
 ---
-name: use-scrapling
+name: scrapling
 description: Scrape websites using the scrapling library. Use when the user wants to extract data from a website, crawl pages, parse HTML, or fetch web content — especially when the site may use JavaScript rendering or anti-bot protection. Trigger on keywords like scrape, crawl, extract data from a website, fetch web page, or parse HTML.
 ---
 
-# SKILL: use-scrapling
+# SKILL: scrapling
 
 Scrapling is an adaptive Python web scraping library that handles static pages, JavaScript-rendered content, and anti-bot protected sites through a unified API.
 
