@@ -1,6 +1,6 @@
 # CLAUDE
 
-This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects.
+This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep this file concise — if it grows beyond 200 lines, notify the user.
 
 ## 1. Plan Mode
 
@@ -46,6 +46,10 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects.
 
 **Don't assume the merge strategy.** Ask if unclear.
 
-## 4. Concise
+## 4. Best Practices
 
-**Keep this file concise.** If this file grows, beyond 200 lines, notify the user.
+- **No magic strings or numbers.** Name constants to express intent. Prefer `expire_in(SESSION_EXPIRATION_SECONDS)` over `expire_in(86400)`.
+- **Guard clauses / early returns.** Validate inputs at the top and return early rather than nesting the happy path.
+- **No dead code.** Delete unused code rather than commenting it out. Version control is the safety net.
+- **Fail fast.** Validate at system boundaries (user input, external APIs) and surface errors immediately rather than letting bad state propagate.
+- **Prefer pure functions.** Minimize side effects. When side effects are necessary, make them explicit.
