@@ -7,13 +7,17 @@ description: Scrape websites using the scrapling library. Use when the user want
 
 Scrapling is an adaptive Python web scraping library that handles static pages, JavaScript-rendered content, and anti-bot protected sites through a unified API.
 
-## Step 1: Verify installation
+## Running scrapling
+
+Always run scripts with `uv run --with scrapling` — no installation, venv, or `pyproject.toml` required. Works in any project.
 
 ```bash
-uv pip show scrapling 2>/dev/null | grep Version || uv add scrapling
+uv run --with scrapling python scrape.py
 ```
 
-## Step 2: Choose the right fetcher
+Write the scraping logic to a `.py` file, then execute it this way.
+
+## Step 1: Choose the right fetcher
 
 Select based on the target site's characteristics:
 
@@ -26,7 +30,7 @@ Select based on the target site's characteristics:
 
 **If unsure**, start with `Fetcher`. If you get blocked or see empty content, escalate to `StealthyFetcher`, then `DynamicFetcher`.
 
-## Step 3: Fetch the page
+## Step 2: Fetch the page
 
 ### Static HTML — `Fetcher`
 
@@ -69,7 +73,7 @@ with FetcherSession(impersonate='chrome') as session:
     page = session.get('https://example.com/dashboard')
 ```
 
-## Step 4: Extract data
+## Step 3: Extract data
 
 All fetchers return the same `Selector` object — extraction syntax is identical regardless of which fetcher was used.
 
@@ -119,7 +123,7 @@ for item in page.css('.result'):
 print(json.dumps(results, indent=2))
 ```
 
-## Step 5: Multi-page crawl (Spider)
+## Step 4: Multi-page crawl (Spider)
 
 Use `Spider` when scraping more than a handful of pages.
 
@@ -146,6 +150,12 @@ class MySpider(Spider):
 result = MySpider().start()
 result.items.to_json('output.json')
 print(f"Scraped {len(result.items)} items → output.json")
+```
+
+Run with:
+
+```bash
+uv run --with scrapling python scrape.py
 ```
 
 ## Common options
