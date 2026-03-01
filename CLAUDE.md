@@ -41,6 +41,7 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects.
 - Create a task list for non-trivial work (use TaskCreate)
 - Always work on a feature branch, never on primary branches (main, master, dev, qa, prod, release, etc.)
 - Branch naming: descriptive of the problem (e.g., `fix-auth-bug`, `add-user-profile`)
+- After making code changes, always run `/simplify`
 - Let the user decide: merge locally or create PR
 
 **Don't assume the merge strategy.** Ask if unclear.
