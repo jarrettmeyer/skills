@@ -10,7 +10,7 @@ Scrapling is an adaptive Python web scraping library that handles static pages, 
 ## Step 1: Verify installation
 
 ```bash
-pip show scrapling 2>/dev/null | grep Version || pip install scrapling
+uv pip show scrapling 2>/dev/null | grep Version || uv add scrapling
 ```
 
 ## Step 2: Choose the right fetcher
