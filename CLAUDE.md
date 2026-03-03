@@ -43,7 +43,7 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 **Use task lists and feature branches for all work.**
 
 - Create a task list for non-trivial work (use TaskCreate)
-- Always work on a feature branch, never on primary branches (main, master, dev, qa, prod, release, etc.)
+- Always work on a feature branch, never on primary branches (main, master, dev, qa, prod, etc.)
 - Branch naming: descriptive of the problem (e.g., `fix-auth-bug`, `add-user-profile`)
 - After making code changes, always run `/simplify`
 - Let the user decide: merge locally or create PR
@@ -53,7 +53,7 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 ## 4. Best Practices
 
 - **No unsolicited Markdown files**: Never create `.md` files unless the user explicitly requests them.
-- **No magic strings or numbers**: Name constants to express intent. Prefer `user.has_role(ADMIN_GROUP_NAME)` over `user.has_role("some_random_group")`.
+- **No magic strings or numbers**: Name constants to express intent. Prefer `user.has_role(ADMIN_GROUP_NAME)` over `user.has_role("my_group_name")`.
 - **Guard clauses / early returns**: Validate inputs at the top and return early rather than nesting the happy path.
 - **No dead code**: Delete unused code rather than commenting it out. Version control is the safety net.
 - **Fail fast**: Validate at system boundaries (user input, external APIs) and surface errors immediately rather than letting bad state propagate.
