@@ -52,7 +52,8 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 
 ## 4. Best Practices
 
-- **No magic strings or numbers**: Name constants to express intent. Prefer `expire_in(SESSION_EXPIRATION_SECONDS)` over `expire_in(86400)`.
+- **No unsolicited Markdown files**: Never create `.md` files unless the user explicitly requests them.
+- **No magic strings or numbers**: Name constants to express intent. Prefer `user.has_role(ADMIN_GROUP_NAME)` over `user.has_role("some_random_group")`.
 - **Guard clauses / early returns**: Validate inputs at the top and return early rather than nesting the happy path.
 - **No dead code**: Delete unused code rather than commenting it out. Version control is the safety net.
 - **Fail fast**: Validate at system boundaries (user input, external APIs) and surface errors immediately rather than letting bad state propagate.
