@@ -38,6 +38,14 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 
 **Before claiming "done": run verification steps and show actual output.**
 
+### UI Changes Require Playwright Testing
+
+**CRITICAL: When making UI updates (Streamlit, web interfaces), you MUST test with Playwright, not just unit tests.**
+
+- Unit tests (pytest) alone are NOT sufficient for UI changes
+- Always verify the actual UI loads and renders correctly
+- Check for red error text, broken imports, missing data, and console logs
+
 ## 3. Workflow
 
 **Use task lists and feature branches for all work.**
