@@ -58,6 +58,10 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 
 **Don't assume the merge strategy.** Ask if unclear.
 
+### git worktrees
+
+Use `~/.config/superpowers/worktrees/<project>/<branch>/` for all worktrees (default from [superpowers:using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/SKILL.md) skill). Do not save worktrees to local project directories.
+
 ## 4. Best Practices
 
 - **No unsolicited Markdown files**: Never create `.md` files unless the user explicitly requests them.
