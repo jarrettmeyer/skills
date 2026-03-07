@@ -58,9 +58,13 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 
 **Don't assume the merge strategy.** Ask if unclear.
 
-### git worktrees
+### Task Decomposition
 
-Use `~/.config/superpowers/worktrees/<project>/<branch>/` for all worktrees (default from [superpowers:using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/SKILL.md) skill). Do not save worktrees to local project directories.
+**Before starting work, decompose the request into independent work streams.** A single user request often contains multiple concerns that should be separate branches, worktrees, and PRs.
+
+Ask yourself: "If I made a PR for each part, would a reviewer need context from the other PRs to understand any one of them?" If no, they're independent — split them.
+
+When the split is obvious, do it and inform the user. Only ask for confirmation when the boundary is genuinely ambiguous. If in doubt, split — merging two small PRs is easier than untangling one large one.
 
 ## 4. Best Practices
 
