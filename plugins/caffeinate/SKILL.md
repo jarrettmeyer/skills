@@ -1,6 +1,8 @@
 ---
 name: caffeinate
 description: Keep the computer awake. Use when user mentions sleep, caffeinate, stay awake, keepalive, or specifies a wake duration/time.
+license: MIT
+compatibility: Requires `caffeinate` CLI.
 ---
 
 # Caffeinate

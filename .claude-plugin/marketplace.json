@@ -1,0 +1,25 @@
+{
+  "name": "jarrettmeyer-skill-marketplace",
+  "owner": {
+    "name": "jarrettmeyer"
+  },
+  "metadata": {
+    "description": "Utility skills by jarrettmeyer",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "caffeinate",
+      "source": "./plugins/caffeinate",
+      "description": "Keep your MacBook awake.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jarrettmeyer"
+      },
+      "repository": "https://github.com/jarrettmeyer/skills",
+      "license": "MIT",
+      "keywords": ["macos", "caffeinate"]
+    }
+  ]
+}
