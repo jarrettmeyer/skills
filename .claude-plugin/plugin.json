@@ -1,0 +1,11 @@
+{
+  "name": "jarrettmeyer",
+  "description": "Automation and utility skills: caffeinate, podman, scrapling, uuid, uv",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jarrett Meyer",
+    "url": "https://github.com/jarrettmeyer"
+  },
+  "repository": "https://github.com/jarrettmeyer/skills",
+  "license": "MIT"
+}

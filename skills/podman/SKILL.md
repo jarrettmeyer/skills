@@ -55,7 +55,7 @@ Spawn the `log-reader` subagent using the Task tool:
 Task:
 - subagent_type: general-purpose
 - description: "Analyze container logs"
-- prompt: "Read agents/log-reader.md and follow its instructions to analyze logs for <container-name>. The user wants to <what the user asked for>."
+- prompt: "Read agents/podman-log-reader.md and follow its instructions to analyze logs for <container-name>. The user wants to <what the user asked for>."
 ```
 
 The subagent will fetch logs using podman, analyze them, and report findings back to you.
