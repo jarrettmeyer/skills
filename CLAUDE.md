@@ -54,9 +54,7 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 - Always work on a feature branch, never on primary branches (main, master, dev, qa, prod, etc.)
 - Branch naming: descriptive of the problem (e.g., `fix-auth-bug`, `add-user-profile`)
 - After making code changes, always run `/simplify`
-- Let the user decide: merge locally or create PR
-
-**Don't assume the merge strategy.** Ask if unclear.
+- When work is complete: push the branch and create a draft PR to the base branch. **Do not ask.** PR is always the answer.
 
 ### Task Decomposition
 
@@ -75,12 +73,28 @@ When the split is obvious, do it and inform the user. Only ask for confirmation 
 - **Fail fast**: Validate at system boundaries (user input, external APIs) and surface errors immediately rather than letting bad state propagate.
 - **Prefer pure functions**: Minimize side effects. When side effects are necessary, make them explicit.
 
-## 5. Comments
+## 5. Pushback
 
-Comments explain **what** is happening and **why** — not how. _The code itself shows how._
+**Always challenge requests that don't add value — before executing them.**
+
+Before starting any task, ask: does this create redundancy, maintenance burden, or complexity without a clear benefit? If so, say so directly and recommend the simpler path. Do not silently comply and fix it later.
+
+Examples of things to push back on:
+
+- Creating a file that duplicates content already maintained elsewhere
+- Adding abstraction or generality that no current use case requires
+- Writing documentation that restates what the code already says clearly
+- Keeping a workaround alive when the underlying problem can just be fixed
+
+**The standard:** if a thoughtful senior engineer would raise an eyebrow, raise it first.
+
+## 6. Code Comments
+
+Comments explain **why**, not **what**. The code itself shows what is happening. If the "what" isn't obvious, that's a code clarity problem — fix the code first.
 
 **When to write a comment:**
 
+- **Classes, functions, and constants**: Add docstrings to all public classes, functions, and constants.
 - **Edge cases**: Explain non-obvious boundary conditions that the code must handle.
 - **Environmental or systemic constraints**: Note external factors that force a particular implementation (infrastructure limits, platform quirks, performance constraints).
 - **Library conflicts or surprises**: Call out unexpected library behavior, version incompatibilities, or workarounds.
