@@ -27,7 +27,22 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 
 **When in doubt, ask questions in plan mode before proposing solutions.**
 
-## 2. Verification
+## 2. Pushback
+
+**Always challenge requests that don't add value — before executing them.**
+
+Before starting any task, ask: does this create redundancy, maintenance burden, or complexity without a clear benefit? If so, say so directly and recommend the simpler path. Do not silently comply and fix it later.
+
+Examples of things to push back on:
+
+- Creating a file that duplicates content already maintained elsewhere
+- Adding abstraction or generality that no current use case requires
+- Writing documentation that restates what the code already says clearly
+- Keeping a workaround alive when the underlying problem can just be fixed
+
+**The standard:** if a thoughtful senior engineer would raise an eyebrow, raise it first.
+
+## 3. Verification
 
 **Define how to verify success before starting work.** Success criteria must be concrete and testable.
 
@@ -38,15 +53,7 @@ This is a user-level `~/.claude/CLAUDE.md`. This applies to all projects. Keep t
 
 **Before claiming "done": run verification steps and show actual output.**
 
-### UI Changes Require Playwright Testing
-
-**CRITICAL: When making UI updates (Streamlit, web interfaces), you MUST test with Playwright, not just unit tests.**
-
-- Unit tests (pytest) alone are NOT sufficient for UI changes
-- Always verify the actual UI loads and renders correctly
-- Check for red error text, broken imports, missing data, and console logs
-
-## 3. Workflow
+## 4. Workflow
 
 **Use task lists and feature branches for all work.**
 
@@ -64,29 +71,14 @@ Ask yourself: "If I made a PR for each part, would a reviewer need context from 
 
 When the split is obvious, do it and inform the user. Only ask for confirmation when the boundary is genuinely ambiguous. If in doubt, split — merging two small PRs is easier than untangling one large one.
 
-## 4. Best Practices
+## 5. Best Practices
 
 - **No unsolicited Markdown files**: Never create `.md` files unless the user explicitly requests them.
-- **No magic strings or numbers**: Name constants to express intent. Prefer `user.has_role(ADMIN_GROUP_NAME)` over `user.has_role("my_group_name")`.
+- **No magic strings or numbers**: Name constants to express intent. Prefer `user.has_role(ADMIN_GROUP_NAME)` over `user.has_role("my_group_name")`. Prefer `expiration = Date.now() + TOKEN_EXPIRATION_SECONDS * 1000` over `expiration = Date.now() + 86400000`, even when meaning is obvious.
 - **Guard clauses / early returns**: Validate inputs at the top and return early rather than nesting the happy path.
 - **No dead code**: Delete unused code rather than commenting it out. Version control is the safety net.
 - **Fail fast**: Validate at system boundaries (user input, external APIs) and surface errors immediately rather than letting bad state propagate.
 - **Prefer pure functions**: Minimize side effects. When side effects are necessary, make them explicit.
-
-## 5. Pushback
-
-**Always challenge requests that don't add value — before executing them.**
-
-Before starting any task, ask: does this create redundancy, maintenance burden, or complexity without a clear benefit? If so, say so directly and recommend the simpler path. Do not silently comply and fix it later.
-
-Examples of things to push back on:
-
-- Creating a file that duplicates content already maintained elsewhere
-- Adding abstraction or generality that no current use case requires
-- Writing documentation that restates what the code already says clearly
-- Keeping a workaround alive when the underlying problem can just be fixed
-
-**The standard:** if a thoughtful senior engineer would raise an eyebrow, raise it first.
 
 ## 6. Code Comments
 
