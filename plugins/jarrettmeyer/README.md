@@ -5,3 +5,5 @@
 ### `/jarrettmeyer:caffeinate`
 
 ### `/jarrettmeyer:podman`
+
+### `/jarrettmeyer:uv`

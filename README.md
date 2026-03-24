@@ -14,7 +14,8 @@ claude --plugin-dir /path/to/skills
 
 Once installed, skills are available with the `jarrettmeyer:` namespace prefix:
 
-| Command                    | Description                                   |
-| -------------------------- | --------------------------------------------- |
-| `/jarrettmeyer:caffeinate` | Prevent your Mac from sleeping                |
-| `/jarrettmeyer:podman`     | Build, run, and manage containers with Podman |
+| Command                    | Description                                            |
+| -------------------------- | ------------------------------------------------------ |
+| `/jarrettmeyer:caffeinate` | Prevent your Mac from sleeping                         |
+| `/jarrettmeyer:podman`     | Build, run, and manage containers with Podman          |
+| `/jarrettmeyer:uv`         | Python project management, tools, and versions with uv |
