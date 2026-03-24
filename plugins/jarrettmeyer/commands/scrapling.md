@@ -1,32 +1,38 @@
 ---
-name: scrapling
-description: Scrape websites using the scrapling library. Use when the user wants to extract data from a website, crawl pages, parse HTML, or fetch web content — especially when the site may use JavaScript rendering or anti-bot protection. Trigger on keywords like scrape, crawl, extract data from a website, fetch web page, or parse HTML.
+description: "Scrape websites using the scrapling library — static pages, JS-rendered content, and anti-bot protected sites"
+allowed-tools: Bash, Write
+disable-model-invocation: false
 ---
 
-# SKILL: scrapling
-
 Scrapling is an adaptive Python web scraping library that handles static pages, JavaScript-rendered content, and anti-bot protected sites through a unified API.
+
+## File conventions
+
+Unless the user specifies otherwise, write all scraping files to a project-local `.scrapling/` directory:
+
+- Python scripts → `.scrapling/<name>.py`
+- Output files (JSON, HTML, PDF, CSV, etc.) → `.scrapling/<name>.<ext>`
+
+This keeps scraping artifacts out of the project root.
 
 ## Running scrapling
 
 Always run scripts with `uv run --with scrapling` — no installation, venv, or `pyproject.toml` required. Works in any project.
 
 ```bash
-uv run --with scrapling python scrape.py
+uv run --with scrapling python .scrapling/scrape.py
 ```
-
-Write the scraping logic to a `.py` file, then execute it this way.
 
 ## Step 1: Choose the right fetcher
 
 Select based on the target site's characteristics:
 
-| Site type | Fetcher | When to use |
-|-----------|---------|-------------|
-| Static HTML | `Fetcher` | Fast, no JS needed, no bot protection |
-| Anti-bot / Cloudflare | `StealthyFetcher` | Bot detection, Cloudflare, fingerprinting |
-| JavaScript-rendered | `DynamicFetcher` | Content only visible after JS executes |
-| Multi-page with login | `*Session` variants | Cookie persistence across requests |
+| Site type             | Fetcher             | When to use                               |
+| --------------------- | ------------------- | ----------------------------------------- |
+| Static HTML           | `Fetcher`           | Fast, no JS needed, no bot protection     |
+| Anti-bot / Cloudflare | `StealthyFetcher`   | Bot detection, Cloudflare, fingerprinting |
+| JavaScript-rendered   | `DynamicFetcher`    | Content only visible after JS executes    |
+| Multi-page with login | `*Session` variants | Cookie persistence across requests        |
 
 **If unsure**, start with `Fetcher`. If you get blocked or see empty content, escalate to `StealthyFetcher`, then `DynamicFetcher`.
 
@@ -148,8 +154,8 @@ class MySpider(Spider):
             yield response.follow(next_page, callback=self.parse)
 
 result = MySpider().start()
-result.items.to_json('output.json')
-print(f"Scraped {len(result.items)} items → output.json")
+result.items.to_json('.scrapling/output.json')
+print(f"Scraped {len(result.items)} items → .scrapling/output.json")
 ```
 
 Run with:
@@ -184,10 +190,10 @@ page = DynamicFetcher.get(
 
 ## Troubleshooting
 
-| Symptom | Fix |
-|---------|-----|
-| Empty selectors / missing content | Switch to `DynamicFetcher` — page likely needs JS |
-| 403 / CAPTCHA / bot block | Switch to `StealthyFetcher` |
-| Inconsistent results across runs | Use `find_by_text` or similarity matching instead of brittle CSS paths |
-| Need to stay logged in | Use a `*Session` variant |
-| Large crawl is slow | Increase `Spider` concurrency settings |
+| Symptom                           | Fix                                                                    |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| Empty selectors / missing content | Switch to `DynamicFetcher` — page likely needs JS                      |
+| 403 / CAPTCHA / bot block         | Switch to `StealthyFetcher`                                            |
+| Inconsistent results across runs  | Use `find_by_text` or similarity matching instead of brittle CSS paths |
+| Need to stay logged in            | Use a `*Session` variant                                               |
+| Large crawl is slow               | Increase `Spider` concurrency settings                                 |

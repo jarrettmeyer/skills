@@ -18,4 +18,5 @@ Once installed, skills are available with the `jarrettmeyer:` namespace prefix:
 | -------------------------- | ------------------------------------------------------ |
 | `/jarrettmeyer:caffeinate` | Prevent your Mac from sleeping                         |
 | `/jarrettmeyer:podman`     | Build, run, and manage containers with Podman          |
+| `/jarrettmeyer:scrapling`  | Scrape websites — static, JS-rendered, and anti-bot protected |
 | `/jarrettmeyer:uv`         | Python project management, tools, and versions with uv |
