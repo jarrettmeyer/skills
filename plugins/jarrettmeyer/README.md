@@ -2,4 +2,6 @@
 
 ## Commands
 
-### `/caffeinate`
+### `/jarrettmeyer:caffeinate`
+
+### `/jarrettmeyer:podman`
