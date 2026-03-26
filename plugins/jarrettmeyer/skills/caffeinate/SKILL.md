@@ -1,4 +1,5 @@
 ---
+name: caffeinate
 description: "Use caffeinate to keep your MacBook awake"
 allowed-tools: Bash
 disable-model-invocation: false

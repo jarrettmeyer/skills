@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - 2026-03-26
+
+### Fixed
+
+- Added missing `name` field to frontmatter of all 4 skills
+
 ## [1.0.0] - 2026-03-24
 
 Initial release.

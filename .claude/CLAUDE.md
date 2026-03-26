@@ -46,6 +46,7 @@ The version is defined in two places — keep them in sync:
 
 ```yaml
 ---
+name: skill-name
 description: "Short description shown in skill picker"
 allowed-tools: Bash # comma-separated: Bash, Read, Write, Edit, etc.
 disable-model-invocation: false

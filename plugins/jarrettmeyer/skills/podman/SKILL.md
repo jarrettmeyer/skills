@@ -1,4 +1,5 @@
 ---
+name: podman
 description: "Use Podman to interact with local containers"
 allowed-tools: Bash
 disable-model-invocation: false

@@ -1,4 +1,5 @@
 ---
+name: uv
 description: "Use uv for Python project management, running scripts and tools, and managing Python versions"
 allowed-tools: Bash
 disable-model-invocation: false

@@ -1,4 +1,5 @@
 ---
+name: scrapling
 description: "Scrape websites using the scrapling library — static pages, JS-rendered content, and anti-bot protected sites"
 allowed-tools: Bash, Write
 disable-model-invocation: false
