@@ -17,6 +17,7 @@ Once installed, skills are available with the `jarrettmeyer:` namespace prefix:
 | Command                    | Description                                            |
 | -------------------------- | ------------------------------------------------------ |
 | `/jarrettmeyer:caffeinate` | Prevent your Mac from sleeping                         |
+| `/jarrettmeyer:gan`        | Adversarial multi-agent review loop                    |
 | `/jarrettmeyer:podman`     | Build, run, and manage containers with Podman          |
-| `/jarrettmeyer:scrapling`  | Scrape websites — static, JS-rendered, and anti-bot protected |
+| `/jarrettmeyer:scrapling`  | Scrape websites                                        |
 | `/jarrettmeyer:uv`         | Python project management, tools, and versions with uv |
