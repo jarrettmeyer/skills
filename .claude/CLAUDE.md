@@ -56,7 +56,7 @@ disable-model-invocation: false
 ## Local Testing
 
 ```bash
-claude --plugin-dir /path/to/skills
+claude --plugin-dir ./plugins/jarrettmeyer/
 ```
 
 Then invoke with `/jarrettmeyer:<skill-name>`.
