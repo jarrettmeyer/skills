@@ -9,7 +9,7 @@ This project is for **user level** Claude Code instructions, skills, and subagen
 claude plugin install jarrettmeyer/skills
 
 # Or for local development/testing
-claude --plugin-dir /path/to/skills
+claude --plugin-dir ./plugins/jarrettmeyer/
 ```
 
 Once installed, skills are available with the `jarrettmeyer:` namespace prefix:

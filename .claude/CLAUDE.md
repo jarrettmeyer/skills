@@ -12,6 +12,8 @@ This repo contains Claude Code skills packaged as a plugin (`jarrettmeyer` names
 │       └── skills/             # Claude skills
 │           ├── caffeinate/
 │           │   └── SKILL.md
+│           ├── gan/
+│           │   └── SKILL.md
 │           ├── podman/
 │           │   └── SKILL.md
 │           ├── scrapling/
