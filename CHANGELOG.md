@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.3] - 2026-03-29
+
+### Changed
+
+- `scrapling` — output directory changed from `.scrapling/` to `.scratch/jarrettmeyer/scrapling/` to match the `gan` skill convention
+
 ## [1.0.2] - 2026-03-29
 
 ### Added
