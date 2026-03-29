@@ -4,7 +4,7 @@
 
 ### Added
 
-- `gan` — adversarial multi-agent review loop (Planner, Plan Reviewer, Implementer, Code Reviewer)
+- `gan` — adversarial multi-agent review loop (Creator, Critic, Executor)
 
 ## [1.0.1] - 2026-03-26
 

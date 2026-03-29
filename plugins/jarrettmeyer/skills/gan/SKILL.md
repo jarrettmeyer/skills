@@ -51,9 +51,11 @@ Ensure `.scratch/` is listed in `.gitignore` to prevent session files from appea
 PROJECT_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 mkdir -p "$PROJECT_ROOT/.scratch/jarrettmeyer/gan"
+echo "PROJECT_ROOT=$PROJECT_ROOT"
+echo "TIMESTAMP=$TIMESTAMP"
 ```
 
-All paths in this skill are relative to `$PROJECT_ROOT`. Do not re-evaluate `$TIMESTAMP`.
+Record the `PROJECT_ROOT` and `TIMESTAMP` values from the bash output above. Use them verbatim in all subsequent file paths throughout this skill. Do not re-run `date` or `git rev-parse`.
 
 1. Parse flags and request from the invocation (see Invocation section). If the request string is
    empty after flag parsing, stop immediately and tell the user: "No request provided. Usage:
@@ -197,7 +199,8 @@ Append to session file:
 
 - `CHANGES_REQUESTED` with at least one `critical` or `major` issue, and round < max rounds → iterate.
 - `CHANGES_REQUESTED` with only `minor` issues → treat as done; proceed with the current artifact.
-- `APPROVED` or round = max rounds → record final status and proceed.
+- `APPROVED` → record final status and proceed with this artifact as `[FINAL APPROVED ARTIFACT]`.
+- Round = max rounds (without `APPROVED`) → record final status as `MAX_ROUNDS_REACHED` and proceed with the artifact from this last round as `[FINAL APPROVED ARTIFACT]`.
 
 ## Step 3: Execution Phase Loop
 
