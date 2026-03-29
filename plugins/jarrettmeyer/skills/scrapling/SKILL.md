@@ -18,10 +18,10 @@ Ensure `.scratch/` is listed in `.gitignore` to keep scraping artifacts out of v
 
 ## Running scrapling
 
-Always run scripts with `uv run --with scrapling` — no installation, venv, or `pyproject.toml` required. Works in any project.
+Always run scripts with `uv run --with "scrapling[all]"` — no installation, venv, or `pyproject.toml` required. Works in any project.
 
 ```bash
-uv run --with scrapling python .scratch/jarrettmeyer/scrapling/scrape.py
+uv run --with "scrapling[all]" python .scratch/jarrettmeyer/scrapling/scrape.py
 ```
 
 ## Step 1: Choose the right fetcher
@@ -53,7 +53,7 @@ print(page.status)  # 200
 ```python
 from scrapling.fetchers import StealthyFetcher
 
-page = StealthyFetcher.get('https://example.com', headless=True)
+page = StealthyFetcher.fetch('https://example.com', headless=True)
 print(page.status)
 ```
 
@@ -62,7 +62,7 @@ print(page.status)
 ```python
 from scrapling.fetchers import DynamicFetcher
 
-page = DynamicFetcher.get(
+page = DynamicFetcher.fetch(
     'https://example.com',
     wait_selector='.target-element',  # wait for element before parsing
     headless=True,
@@ -162,7 +162,7 @@ print(f"Scraped {len(result.items)} items → .scratch/jarrettmeyer/scrapling/ou
 Run with:
 
 ```bash
-uv run --with scrapling python scrape.py
+uv run --with "scrapling[all]" python scrape.py
 ```
 
 ## Common options
@@ -179,10 +179,10 @@ page = Fetcher.get(
 )
 
 # DynamicFetcher: scroll before capturing
-page = DynamicFetcher.get('https://example.com', scroll_down=True)
+page = DynamicFetcher.fetch('https://example.com', scroll_down=True)
 
 # DynamicFetcher: execute JS before capturing
-page = DynamicFetcher.get(
+page = DynamicFetcher.fetch(
     'https://example.com',
     wait_selector='.loaded',
     execute_js="window.scrollTo(0, document.body.scrollHeight)",

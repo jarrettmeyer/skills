@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4] - 2026-03-29
+
+### Fixed
+
+- `scrapling` — `StealthyFetcher` and `DynamicFetcher` examples corrected from `.get()` to `.fetch()` (closes #6)
+- `scrapling` — run command updated from `--with scrapling` to `--with "scrapling[all]"` to include browser/HTTP extras (closes #7)
+
 ## [1.0.3] - 2026-03-29
 
 ### Changed
