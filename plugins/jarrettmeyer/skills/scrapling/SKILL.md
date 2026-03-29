@@ -9,19 +9,19 @@ Scrapling is an adaptive Python web scraping library that handles static pages, 
 
 ## File conventions
 
-Unless the user specifies otherwise, write all scraping files to a project-local `.scrapling/` directory:
+Unless the user specifies otherwise, write all scraping files to:
 
-- Python scripts → `.scrapling/<name>.py`
-- Output files (JSON, HTML, PDF, CSV, etc.) → `.scrapling/<name>.<ext>`
+- Python scripts → `.scratch/jarrettmeyer/scrapling/<name>.py`
+- Output files (JSON, HTML, PDF, CSV, etc.) → `.scratch/jarrettmeyer/scrapling/<name>.<ext>`
 
-This keeps scraping artifacts out of the project root.
+Ensure `.scratch/` is listed in `.gitignore` to keep scraping artifacts out of version control.
 
 ## Running scrapling
 
 Always run scripts with `uv run --with scrapling` — no installation, venv, or `pyproject.toml` required. Works in any project.
 
 ```bash
-uv run --with scrapling python .scrapling/scrape.py
+uv run --with scrapling python .scratch/jarrettmeyer/scrapling/scrape.py
 ```
 
 ## Step 1: Choose the right fetcher
@@ -155,8 +155,8 @@ class MySpider(Spider):
             yield response.follow(next_page, callback=self.parse)
 
 result = MySpider().start()
-result.items.to_json('.scrapling/output.json')
-print(f"Scraped {len(result.items)} items → .scrapling/output.json")
+result.items.to_json('.scratch/jarrettmeyer/scrapling/output.json')
+print(f"Scraped {len(result.items)} items → .scratch/jarrettmeyer/scrapling/output.json")
 ```
 
 Run with:
