@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.5] - 2026-03-30
+
+### Changed
+
+- `gan` — document intentional signal asymmetry between Creation and Execution phase critics (closes #12)
+
 ## [1.0.4] - 2026-03-29
 
 ### Fixed
