@@ -169,6 +169,11 @@ Spawn a general-purpose subagent:
 6. Your response MUST begin with one of these exact signals on its own line:
    - `APPROVED`
    - `CHANGES_REQUESTED`
+
+   > **Note:** This phase intentionally uses `APPROVED`/`CHANGES_REQUESTED` (not `ACCEPTED`/`REJECTED`).
+   > The Execution Phase uses different signals because execution review differs semantically from plan review.
+   > Do not unify these signals.
+
 7. If `CHANGES_REQUESTED`: follow with a rank-ordered issue list using this format:
 
    ```
@@ -260,6 +265,11 @@ Spawn a general-purpose subagent:
 5. Your response MUST begin with:
    - `ACCEPTED`
    - `REJECTED`
+
+   > **Note:** This phase intentionally uses `ACCEPTED`/`REJECTED` (not `APPROVED`/`CHANGES_REQUESTED`).
+   > The Creation Phase uses different signals because execution review differs semantically from plan review.
+   > Do not unify these signals.
+
 6. If `REJECTED`: rank-ordered issue list. If `ACCEPTED`: brief summary.
 
 **Signal parsing:** Trim whitespace and normalise to uppercase. If the first non-blank line does
