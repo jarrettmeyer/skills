@@ -103,6 +103,14 @@ bun upgrade
 
 Report the version change. If the upgrade fails with a permissions error, suggest `sudo bun upgrade`.
 
+Then update globally installed packages:
+
+```bash
+bun update -g --latest
+```
+
+If no global packages are installed, this will fail with a missing `package.json` error — skip gracefully.
+
 ### uv (if installed)
 
 Skip if uv was not detected.
