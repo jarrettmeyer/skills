@@ -32,20 +32,11 @@ All changes must follow this process:
    ```bash
    git worktree add .worktrees/<branch-name> -b <branch-name>
    ```
-3. **Make changes** per the skill-specific steps below.
+3. **Make changes.**
+   - For a new skill: create `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md` and add it to the `README.md` skill table with a brief description.
+   - For an existing skill: edit `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md` and verify the README description is still accurate.
 4. **CHANGELOG.** For material skill changes (new skills, removals, behavior changes, bug fixes): add an entry to `CHANGELOG.md` and bump the version in `plugin.json`. Infrastructure, tooling, and documentation-only changes do not get entries.
 5. **Pull request.** Push the branch and open a draft PR to `main`. Always PR — never commit directly to `main`.
-
-### Adding a Skill
-
-1. Create `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md`
-2. Add frontmatter: `description`, `allowed-tools`, `disable-model-invocation`
-3. Write the skill content (instructions for Claude)
-4. Update `README.md` skill table
-
-### Updating a Skill
-
-1. Edit `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md`
 
 ## Skill Frontmatter
 
