@@ -36,7 +36,7 @@ All changes must follow this process:
    - For a new skill: create `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md` and add it to the `README.md` skill table with a brief description.
    - For an existing skill: edit `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md` and verify the README description is still accurate.
 4. **CHANGELOG.** For material skill changes (new skills, removals, behavior changes, bug fixes): add an entry to `CHANGELOG.md` and bump the version in `plugin.json`. Infrastructure, tooling, and documentation-only changes do not get entries.
-5. **Pull request.** Push the branch and open a draft PR to `main`. Always PR — never commit directly to `main`.
+5. **Pull request.** Push the branch and open a PR to `main`. Always PR. Never commit directly to `main`.
 
 ## Skill Frontmatter
 
