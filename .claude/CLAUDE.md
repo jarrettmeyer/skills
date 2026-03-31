@@ -5,21 +5,13 @@ This repo contains Claude Code skills packaged as a plugin (`jarrettmeyer` names
 ## Structure
 
 ```
+├── .claude/
+├── .vscode/                    # VSCode settings
 ├── plugins/
 │   └── jarrettmeyer/
 │       ├── .claude-plugin/
 │       │   └── plugin.json     # Plugin metadata
 │       └── skills/             # Claude skills
-│           ├── caffeinate/
-│           │   └── SKILL.md
-│           ├── gan/
-│           │   └── SKILL.md
-│           ├── podman/
-│           │   └── SKILL.md
-│           ├── scrapling/
-│           │   └── SKILL.md
-│           └── uv/
-│               └── SKILL.md
 ├── LICENSE.txt
 └── README.md
 ```
@@ -31,18 +23,20 @@ The version is defined in two places — keep them in sync:
 - `plugins/jarrettmeyer/.claude-plugin/plugin.json`
 - `CHANGELOG.md`
 
-## Adding a Skill
+## Workflow
 
-1. Create `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md`
-2. Add frontmatter: `description`, `allowed-tools`, `disable-model-invocation`
-3. Write the skill content (instructions for Claude)
-4. Update `README.md` skill table
-5. Add entry to `CHANGELOG.md` and bump version in `plugin.json`
+All changes must follow this process:
 
-## Updating a Skill
-
-1. Edit `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md`
-2. Add entry to `CHANGELOG.md` and bump version in `plugin.json`
+1. **Plan mode first.** No edits until a plan is approved. The plan must include: branch name, worktree setup, skill-specific steps, CHANGELOG decision, and PR creation.
+2. **Branch + worktree.** Create a feature branch and a project-local worktree at `.worktrees/<branch-name>/`. All edits happen inside the worktree.
+   ```bash
+   git worktree add .worktrees/<branch-name> -b <branch-name>
+   ```
+3. **Make changes.**
+   - For a new skill: create `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md` and add it to the `README.md` skill table with a brief description. See "Skill Frontmatter" for a guide on skill frontmatter. The `/plugin-dev:skill-development` skill can help with this.
+   - For an existing skill: edit `plugins/jarrettmeyer/skills/<skill-name>/SKILL.md` and verify the README description is still accurate.
+4. **CHANGELOG.** For material skill changes (new skills, removals, behavior changes, bug fixes): add an entry to `CHANGELOG.md` and bump the version in `plugin.json`. Infrastructure, tooling, and documentation-only changes do not get entries.
+5. **Pull request.** Push the branch and open a PR to `main`. Always PR. Never commit directly to `main`.
 
 ## Skill Frontmatter
 
