@@ -18,4 +18,4 @@ jobs:
           node-version: "25"
 
       - name: Check formatting
-        run: npx prettier@3.8.1 --check "**/*.md" "**/*.json"
+        run: npx prettier@3.8.1 --check .
