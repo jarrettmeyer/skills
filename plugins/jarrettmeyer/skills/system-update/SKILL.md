@@ -49,16 +49,21 @@ Key packages:
 
 - `awscli`
 - `bash`
+- `ca-certificates`
 - `cfn-lint`
 - `coreutils`
 - `curl`
+- `fzf`
 - `gh`
 - `git`
 - `jq`
 - `node`
+- `openssl@3`
+- `pandoc`
 - `podman`
 - `podman-compose`
 - `podman-desktop`
+- `poppler`
 - `python@3.14`
 - `tree`
 - `wget`

@@ -6,6 +6,10 @@
 
 - `pdf` — read, extract text from, and convert PDF files
 
+### Changed
+
+- `system-update` — update key brew packages list
+
 ## [1.0.6] - 2026-03-31
 
 ### Added
