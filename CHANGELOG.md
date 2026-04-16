@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.7] - 2026-04-16
+
+### Added
+
+- `pdf` — read, extract text from, and convert PDF files
+
 ## [1.0.6] - 2026-03-31
 
 ### Added
