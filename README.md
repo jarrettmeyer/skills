@@ -18,6 +18,7 @@ Once installed, skills are available with the `jarrettmeyer:` namespace prefix:
 | ----------------------------- | ------------------------------------------------------ |
 | `/jarrettmeyer:caffeinate`    | Prevent your Mac from sleeping                         |
 | `/jarrettmeyer:gan`           | Adversarial multi-agent review loop                    |
+| `/jarrettmeyer:pdf`           | Read and process PDF files                             |
 | `/jarrettmeyer:podman`        | Build, run, and manage containers with Podman          |
 | `/jarrettmeyer:scrapling`     | Scrape websites                                        |
 | `/jarrettmeyer:system-update` | Detect and update system tools (Homebrew, bun, uv)     |
